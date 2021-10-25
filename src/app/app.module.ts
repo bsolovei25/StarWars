@@ -8,12 +8,15 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {AppBoxesGridComponent} from './app-boxes-grid/app-boxes-grid.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
+import {API_KEY, GoogleSheetsDbService} from "ng-google-sheets-db";
+import { AppTableFillComponent } from './app-table-fill/app-table-fill.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppFilterBoxComponent,
-    AppBoxesGridComponent
+    AppBoxesGridComponent,
+    AppTableFillComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,11 @@ import {MatCardModule} from "@angular/material/card";
     MatCardModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: API_KEY,
+      useValue: 'AIzaSyB26KSKegEIUZrNN1juovnMbH2GG_W5um0'
+    },GoogleSheetsDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

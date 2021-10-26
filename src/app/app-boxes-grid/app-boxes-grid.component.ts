@@ -43,7 +43,6 @@ export class AppBoxesGridComponent implements OnInit {
       // console.log(this.data[0].homeworld);
     })
     // this.api.getHomeWorld().subscribe(res => {
-    //   debugger
     //   console.log(res);
     //   //this.data = res.results;
     //  // console.log(this.data[0].homeworld);

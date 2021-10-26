@@ -15,6 +15,7 @@ export class AppTableFillComponent implements OnInit {
   characters$: Observable<string[][]>
   displayedColumns: string[] = [];
   rowsData: string[][] = [];
+  dataSource:string[][] = [];
 
   constructor(private GoogleSheetsDbServiceService:GoogleSheetsDbServiceService) { }
 
@@ -24,7 +25,7 @@ export class AppTableFillComponent implements OnInit {
     this.characters$ = this.GoogleSheetsDbServiceService.getRows('1q5fcamBqkSc02zXKj7rNWPz0efn53Emuuo9gjIgYA0w', "Page1");
     //this.characters$ = this.GoogleSheetsDbServiceService.getRows('1q5fcamBqkSc02zXKj7rNWPz0efn53Emuuo9gjIgYA0w', "Page1", attributesMapping);
     this.characters$.subscribe(tableRows => {
-      debugger
+      console.log(tableRows)
       this.displayedColumns = tableRows[0];
       (tableRows.forEach((row,index) => {
         if (index !== 0) {
@@ -34,9 +35,9 @@ export class AppTableFillComponent implements OnInit {
     }
     );
     console.log(this.rowsData)
+    this.dataSource =this.rowsData;
   }
 
-  //dataSource = new MatTableDataSource<TableFields>(this.rowsData);
 
 
 

@@ -10,6 +10,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {API_KEY, GoogleSheetsDbService} from "ng-google-sheets-db";
 import { AppTableFillComponent } from './app-table-fill/app-table-fill.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppTableFillComponent } from './app-table-fill/app-table-fill.component
     NoopAnimationsModule,
     MatGridListModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [
     {

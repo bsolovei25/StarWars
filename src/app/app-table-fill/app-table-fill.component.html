@@ -1,1 +1,18 @@
+<table class="table mat-elevation-z8">
+  <ng-container>
+    <div class = "headers">
+      <tr class = "headers__row" *ngFor="let headers of displayedColumns">
+        <th>{{headers}}</th>
+      </tr>
+    </div>
+  </ng-container>
+
+  <ng-container>
+    <div class = "cells" *ngFor="let rows of rowsData">
+      <tr class="cells__rows" *ngFor="let row of rows">
+        <td class="cells__rows__row"> {{row}} </td>
+      </tr>
+    </div>
+  </ng-container>
+</table>
 
